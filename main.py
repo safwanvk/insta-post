@@ -2,7 +2,7 @@ from selenium import webdriver
 from config import USERNAME, PASSWORD
 import time
 
-users = ['__she._.rin__']
+users = ['cristiano', 'dqsalmaan']
 
 browser = webdriver.Chrome(executable_path='/home/safwan/chromedriver_linux64/chromedriver')
 
@@ -20,7 +20,7 @@ password.send_keys(PASSWORD)
 login_btn = browser.find_element_by_css_selector('button[type="submit"]')
 login_btn.click()
 
-time.sleep(2)
+time.sleep(5)
 
 for user in users:
     browser.get(f"https://www.instagram.com/{user}/")
@@ -30,9 +30,14 @@ for user in users:
     number_of_posts, followers, following = browser.find_elements_by_css_selector(
         '.g47SY')
     print('Number of Posts:', number_of_posts.text, 'Followers:', followers.text, 'Following:', following.text)
-
-    time.sleep(1)
+    
 
     bio = browser.find_element_by_css_selector(
         '.-vDIg')
-    print(bio.text)
+    print('Bio:', bio.text, sep='\n')
+
+    with open(f"{user}.txt", "w") as file:
+        file.write(
+            f"Number of Posts: {number_of_posts.text}\nFollowers: {followers.text}\nFollowing: {following.text}\n\nBio:\n{bio.text}")
+
+    time.sleep(1)
