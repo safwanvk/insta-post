@@ -14,3 +14,6 @@ username.send_keys(USERNAME)
 
 password = browser.find_element_by_name('password')
 password.send_keys(PASSWORD)
+
+login_btn = browser.find_element_by_css_selector('button[type="submit"]')
+login_btn.click()
