@@ -1,2 +1,2 @@
-USERNAME = 'im___safwan'
-PASSWORD = '#safwan789'
+USERNAME = 'Your Instagram Username'
+PASSWORD = 'Your Instagram Password'
