@@ -1,2 +1,2 @@
 # insta-pro
-Instagram profile automation using python
+Instagram profile fetch automation using python
